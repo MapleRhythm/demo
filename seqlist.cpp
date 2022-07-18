@@ -2,24 +2,25 @@
 using namespace std;
 template <typename T,int size>class seqlist
 {
-	T slist[size];   //´æ·ÅË³Ðò±íµÄÊý×é
-	int Maxsize;   //×î´ó¿ÉÈÝÄÉÏîÊý 
-	int last;    //ÒÑ´æ±íÏîµÄ×îºóÎ»ÖÃ
+	T slist[size];   //ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	int Maxsize;   //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	int last;    //ï¿½Ñ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
 public:
-	seqlist() { last=-1; Maxsize=size; }    //³õÊ¼»¯Îª¿Õ±í
-	int Length() {return last+1;} //¼ÆËã±í³¤¶È
-	int Find(T & x) ;        // Ñ°ÕÒxÔÚ±íÖÐÎ»ÖÃ£¨ÏÂ±ê£©
-	bool IsIn(T & x);          //ÅÐ¶ÏxÊÇ·ñÔÚ±íÖÐ
-	bool Insert(T & x,int i);         //x²åÈëµ½ÁÐ±íÖÐµÚi¸öÎ»ÖÃ´¦£¨ÏÂ±ê£©
-	bool Remove(T & x);            //É¾³ýx
-	int Next(T & x);                      //Ñ°ÕÒxµÄºó¼ÌÎ»ÖÃ
-	int Prior(T & x);                     //Ñ°ÕÒxµÄÇ°ÇýÎ»ÖÃ
-	bool IsEmpty(){return last==-1;}                    //ÅÐ¶Ï±íÊÇ·ñ¿Õ
+	seqlist() { last=-1; Maxsize=size; }    //ï¿½ï¿½Ê¼ï¿½ï¿½Îªï¿½Õ±ï¿½
+	int Length() {return last+1;} //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	int Find(T & x) ;        // Ñ°ï¿½ï¿½xï¿½Ú±ï¿½ï¿½ï¿½Î»ï¿½Ã£ï¿½ï¿½Â±ê£©
+	bool IsIn(T & x);          //ï¿½Ð¶ï¿½xï¿½Ç·ï¿½ï¿½Ú±ï¿½ï¿½ï¿½
+	bool Insert(T & x,int i);         //xï¿½ï¿½ï¿½ëµ½ï¿½Ð±ï¿½ï¿½Ðµï¿½iï¿½ï¿½Î»ï¿½Ã´ï¿½ï¿½ï¿½ï¿½Â±ê£©
+	bool Remove(T & x);            //É¾ï¿½ï¿½x
+	int Next(T & x);                      //Ñ°ï¿½ï¿½xï¿½Äºï¿½ï¿½Î»ï¿½ï¿½
+	int Prior(T & x);                     //Ñ°ï¿½ï¿½xï¿½ï¿½Ç°ï¿½ï¿½Î»ï¿½ï¿½
+	bool IsEmpty(){return last==-1;}                    //ï¿½Ð¶Ï±ï¿½ï¿½Ç·ï¿½ï¿½
 	bool IsFull()
-	{return last==Maxsize -1;}          //ÅÐ¶Ï±íÊÇ·ñÂú
-	T Get(int i) const;  //È¡µÚi¸öÔªËØÖ®Öµ,´Ë´¦Ðè×¢Òâ£¬ÈôBoxÀàµÄ¹¹Ôìº¯ÊýµÄ²ÎÊýÎ´´øÄ¬ÈÏ²ÎÊýÖµ£¬Ôò´Ëº¯ÊýÐèÒª¸ÄÐ´
-	T& operator[](int i);   //ÖØÔØÏÂ±êÔËËã·û[]
+	{return last==Maxsize -1;}          //ï¿½Ð¶Ï±ï¿½ï¿½Ç·ï¿½ï¿½ï¿½
+	T Get(int i) const;  //È¡ï¿½ï¿½iï¿½ï¿½Ôªï¿½ï¿½Ö®Öµ,ï¿½Ë´ï¿½ï¿½ï¿½×¢ï¿½â£¬ï¿½ï¿½Boxï¿½ï¿½Ä¹ï¿½ï¿½ìº¯ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½Î´ï¿½ï¿½Ä¬ï¿½Ï²ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ð´
+	T& operator[](int i);   //ï¿½ï¿½ï¿½ï¿½ï¿½Â±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[]
 //	void BubbleSort();
+
 
 };
 class Box
@@ -46,18 +47,18 @@ template <typename T,int size>
 int seqlist<T,size>::Find(T & x) 
 {
 	int i=0;
-	while(i<=last && slist[i]!=x) i++;  //Ë³Ðò²éÕÒÊÇ·ñÓÐx 
-	if (i>last) return -1; //Î´ÕÒµ½£¬·µ»Ø-1
-	else return i; //ÕÒµ½£¬·µ»ØÏÂ±ê
+	while(i<=last && slist[i]!=x) i++;  //Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½x 
+	if (i>last) return -1; //Î´ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-1
+	else return i; //ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â±ï¿½
 }
 template <typename T,int size> 
 bool seqlist<T,size>::IsIn(T & x)
 {
 	int i=0;
 	bool found=0;
-	while(i<=last && !found) //»»ÁËÒ»ÖÖ·½·¨À´²éÕÒ
+	while(i<=last && !found) //ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	if (slist[i]!=x) i++;
-	else found=1; //ÕÒµ½
+	else found=1; //ï¿½Òµï¿½
 	return found;
 }
 template <typename T,int size> 
@@ -65,10 +66,10 @@ T& seqlist<T,size>::operator[](int i)
 {
 	if(i>last+1||i<0||i>=Maxsize)
 	{
-		cout<<"ÏÂ±ê³ö½ç£¡"<<endl;
+		cout<<"ï¿½Â±ï¿½ï¿½ï¿½ç£¡"<<endl;
 		exit(1);
 	}
-	if(i>last) last++; //ÏÂ±êÔËËã·û[]£¬Ö»ÄÜÔö¼Ó±íµÄÔªËØ£¬²»ÄÜ¼õÉÙ
+	if(i>last) last++; //ï¿½Â±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[]ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½ï¿½Ôªï¿½Ø£ï¿½ï¿½ï¿½ï¿½Ü¼ï¿½ï¿½ï¿½
 	return slist[i];
 }
 
@@ -78,12 +79,12 @@ bool seqlist<T,size>::Insert(T & x, int i)
 	int j;
 	if (i<0||i>last+1||last==Maxsize -1) 
 		return false;
-	  //²åÈëÎ»ÖÃ²»ºÏÀí£¬²»ÄÜ²åÈë£¨ÎÈ½¡ÐÔ£©
+	  //ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ã²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü²ï¿½ï¿½ë£¨ï¿½È½ï¿½ï¿½Ô£ï¿½
 	else
 	{
 		last++;
 		for(j=last;j>i;j--) slist[j]=slist[j-1];
-	   //´Ó±í×îºóÎ»ÖÃÏòÇ°ÒÀ´ÎºóÒÆ£¬¿Õ³öÖ¸¶¨Î»ÖÃÀ´
+	   //ï¿½Ó±ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½Îºï¿½ï¿½Æ£ï¿½ï¿½Õ³ï¿½Ö¸ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
 		slist[i]=x;
 		return true;
 	 }
@@ -92,31 +93,31 @@ bool seqlist<T,size>::Insert(T & x, int i)
 template <typename T,int size>
 bool seqlist<T,size>::Remove(T & x)
 {
-	int i=Find(x),j; //ÏÈÈ¥ÕÒxÔÚÄÄ¸öÎ»ÖÃ
+	int i=Find(x),j; //ï¿½ï¿½È¥ï¿½ï¿½xï¿½ï¿½ï¿½Ä¸ï¿½Î»ï¿½ï¿½
     if(i>=0)
     {
 		last--;
 		for(j=i;j<=last;j++) 
 			slist[j]=slist[j+1];
-			 //ÒÀ´ÎÇ°ÒÆ£¬±£Ö¤±íÁ¬Ðø
+			 //ï¿½ï¿½ï¿½ï¿½Ç°ï¿½Æ£ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		return true;
     }
-    return false; //±íÖÐ²»´æÔÚx
+    return false; //ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½x
 }
 
 template <typename T,int size> 
 int seqlist<T,size>::Next(T & x)
 {
 	int i=Find(x);
-	if(i>=0 && i<last) return i+1; //xºó¼ÌÎ»ÖÃ
-	else return -1; //x²»ÔÚ±íÖÐ£¬»òÔÚ±íÄ©Î²
+	if(i>=0 && i<last) return i+1; //xï¿½ï¿½ï¿½Î»ï¿½ï¿½
+	else return -1; //xï¿½ï¿½ï¿½Ú±ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½Ú±ï¿½Ä©Î²
 }
 
 template <typename T,int size> 
 int seqlist<T,size>::Prior(T & x)
 {
 	int i=Find(x);
-	if(i>0 && i<=last)  return i-1; //xÇ°ÇýµÄÎ»ÖÃ
+	if(i>0 && i<=last)  return i-1; //xÇ°ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
 	else return -1; 
 }
 template <typename T,int size>
@@ -132,11 +133,11 @@ void seqlist<T,size>::BubbleSort()
     int i,j;
     T temp;
     for (i=0;i<last;i++)
-    {             //×î¶à×ön-1ÌË
- 		noswap=true;	              //Î´½»»»±êÖ¾ÎªÕæ
+    {             //ï¿½ï¿½ï¿½ï¿½ï¿½n-1ï¿½ï¿½
+ 		noswap=true;	              //Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾Îªï¿½ï¿½
 		for(j=last;j>i;j--)
-        {          //´ÓÏÂÍùÉÏÃ°ÅÝ
-			if(slist[j]>slist[j-1])//½µÐò
+        {          //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã°ï¿½ï¿½
+			if(slist[j]>slist[j-1])//ï¿½ï¿½ï¿½ï¿½
             {			
 				temp=slist[j];
 				slist[j]=slist[j-1];
@@ -144,7 +145,7 @@ void seqlist<T,size>::BubbleSort()
 				noswap=false;
             }
         }
-		if(noswap) break;  //±¾ÌËÎÞ½»»»£¬ÔòÖÕÖ¹Ëã·¨¡£
+		if(noswap) break;  //ï¿½ï¿½ï¿½ï¿½ï¿½Þ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¹ï¿½ã·¨ï¿½ï¿½
 	}
 }
 */ 
@@ -163,17 +164,17 @@ int Box::volume()
 
 int main()
 {
-	seqlist <Box,20> boxseq;   //Ë³Ðò±í¶ÔÏóboxseqµÄÔªËØÎªÕûÐÍ
+	seqlist <Box,20> boxseq;   //Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½boxseqï¿½ï¿½Ôªï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½
 	int i,j;
 	const int n=4;
 	Box k,a[n]={Box(1,8,2),Box(2,3,4),Box(6,2,4),Box(7,2,30)};
-	for(j=0;j<n;j++) //°ÑÊý×éÐ´ÈëË³Ðò±í 
+	for(j=0;j<n;j++) //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ 
 		if (!boxseq.Insert(a[j],j))
 		{   
-		  	cout<<"²åÈë³ö´í!"<<endl;
+		  	cout<<"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!"<<endl;
 			break;
 		}
-  	//Ê¹ÓÃ³ÉÔ±º¯ÊýGetºÍBoxÖØÔØ¹ýµÄ<<´òÓ¡Ë³Ðò±íÖÐµÄÓÐÐ§ÔªËØ
+  	//Ê¹ï¿½Ã³ï¿½Ô±ï¿½ï¿½ï¿½ï¿½Getï¿½ï¿½Boxï¿½ï¿½ï¿½Ø¹ï¿½ï¿½ï¿½<<ï¿½ï¿½Ó¡Ë³ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½Ð§Ôªï¿½ï¿½
 	for (i=0;i<boxseq.Length( );i++) 
 	{
 		k=boxseq.Get(i);
@@ -181,37 +182,37 @@ int main()
 	}
 	cout<<endl;	  
 		  
-	//´òÊ¹ÓÃÏÂ±ê·ÃÎÊÔËËã·û[] ºÍ BoxÖÐÖØÔØ¹ýµÄ<<´òÓ¡³öË³Ðò±íÖÐµÄÓÐÐ§ÔªËØ 
+	//ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½Â±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[] ï¿½ï¿½ Boxï¿½ï¿½ï¿½ï¿½ï¿½Ø¹ï¿½ï¿½ï¿½<<ï¿½ï¿½Ó¡ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½Ð§Ôªï¿½ï¿½ 
 	for(i=0;i<n;i++) 
 	{
-		boxseq[i]=Box(0,0,0); //²ÉÓÃÏÂ±êÔËËã·ûÔËËã
+		boxseq[i]=Box(0,0,0); //ï¿½ï¿½ï¿½ï¿½ï¿½Â±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		cout<<boxseq[i];
 	}  
 	cout<<endl;
 	
 	for(i=0;i<n;i++) 
 		boxseq[i]=a[i];  
-	boxseq[n]=Box(19,20,21);   //³¢ÊÔÄÜ·ñÊ¹ÓÃÖØÔØ¹ýµÄ[] ÔÚË³Ðò±íÖÐÔö¼ÓÔªËØ
+	boxseq[n]=Box(19,20,21);   //ï¿½ï¿½ï¿½ï¿½ï¿½Ü·ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½Ø¹ï¿½ï¿½ï¿½[] ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½
 	for(i=0;i<n+1;i++) 
 		cout<<boxseq[i];
 	cout<<endl; 
-	k=Box(22,23,24);//´Ë´¦Îª¹¹ÔìÎÞÃû¶ÔÏóºó£¬°ÑÎÞÃû¶ÔÏóµÄÄÚÈÝ¸³¸øk
-	if (boxseq.IsIn(k)) cout<<"ÔªËØÔÚË³Ðò±íÖÐ"<<endl;
-	else cout <<"ÔªËØ"<<k<<"²»ÔÚË³Ðò±íÖÐ"<<endl;
+	k=Box(22,23,24);//ï¿½Ë´ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó£¬°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¸ï¿½ï¿½ï¿½k
+	if (boxseq.IsIn(k)) cout<<"Ôªï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½"<<endl;
+	else cout <<"Ôªï¿½ï¿½"<<k<<"ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½"<<endl;
  
 	k=Box(2,3,4);
-	if (boxseq.Remove (k)) cout<<"É¾³ýÔªËØ"<<k<<endl; //É¾³ýÊý×é
-	else cout<<"ÕÒ²»µ½ÔªËØ£¬ÎÞ·¨É¾³ý\n";
+	if (boxseq.Remove (k)) cout<<"É¾ï¿½ï¿½Ôªï¿½ï¿½"<<k<<endl; //É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	else cout<<"ï¿½Ò²ï¿½ï¿½ï¿½Ôªï¿½Ø£ï¿½ï¿½Þ·ï¿½É¾ï¿½ï¿½\n";
 
 
 	for (i=0;i<boxseq.Length( );i++) 
 	{
 		k=boxseq.Get(i);
-		cout<< k ; //´òÓ¡ÔªËØÉ¾³ýºóÊ£ÏÂµÄÊý×é
+		cout<< k ; //ï¿½ï¿½Ó¡Ôªï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½Ê£ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½
 	}		  
 	cout<<endl;
 	
-	if (boxseq.Insert(k,j-1))// °ÑÊý×é×°»ØÈ¥,³É¹¦Ôò´òÓ¡
+	if (boxseq.Insert(k,j-1))// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½È¥,ï¿½É¹ï¿½ï¿½ï¿½ï¿½Ó¡
 	{  
 		for (i=0;i<boxseq.Length( );i++)  
 		{
@@ -221,26 +222,26 @@ int main()
 		cout<<endl;  
 	}
 	k=boxseq.Get(boxseq.Next(k));
-	cout<<"´òÓ¡kÔªËØµÄÖ±½Óºó¼Ì£º"<<k<<endl;
+	cout<<"ï¿½ï¿½Ó¡kÔªï¿½Øµï¿½Ö±ï¿½Óºï¿½Ì£ï¿½"<<k<<endl;
 	   
 	k=boxseq.Get(boxseq.Prior(k));
-	cout<<"´òÓ¡kÔªËØµÄÖ±½ÓÇ°Çý£º"<<k<<endl;
+	cout<<"ï¿½ï¿½Ó¡kÔªï¿½Øµï¿½Ö±ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½"<<k<<endl;
 
-	cout<<"¸ÃÔªËØÔÚ±íÖÐµÄÎ»ÖÃÎª£º"
+	cout<<"ï¿½ï¿½Ôªï¿½ï¿½ï¿½Ú±ï¿½ï¿½Ðµï¿½Î»ï¿½ï¿½Îªï¿½ï¿½"
 		<<boxseq.Find(k)<<endl;
 	if(boxseq.IsEmpty( ))  
-		cout<<"±íÊÇ¿ÕµÄ"<<endl;
-	else cout<<"±í²»¿Õ"<<endl;
+		cout<<"ï¿½ï¿½ï¿½Ç¿Õµï¿½"<<endl;
+	else cout<<"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"<<endl;
 	if (boxseq.IsFull())  
-		cout<<"±íÊÇÂúµÄ"<<endl;
-	else cout<<"±íÎ´Âú"<<endl; 
+		cout<<"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"<<endl;
+	else cout<<"ï¿½ï¿½Î´ï¿½ï¿½"<<endl; 
 	if (boxseq.IsIn(k))  
-		cout<<"ÔªËØÔÚ±íÖÐ"<<endl;
+		cout<<"Ôªï¿½ï¿½ï¿½Ú±ï¿½ï¿½ï¿½"<<endl;
 
 /*	boxseq.BubbleSort();
-	cout<<"ÒÔvolumeÎªÖ÷¹Ø¼ü´Ê£¬½µÐòÅÅÁÐºó£º\n";
+	cout<<"ï¿½ï¿½volumeÎªï¿½ï¿½ï¿½Ø¼ï¿½ï¿½Ê£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðºï¿½\n";
 	for (i=0;i<boxseq.Length( );i++)  
-		cout<<boxseq[i]; //×¢Òâ´Ë´¦£¬boxseqÖ»ÊÇÄ£°åÀàµÄ¶ÔÏó£¬¶ø·ÇÊý×éÃû³Æ£¬Ö®ËùÒÔÄÜÖ±½ÓÔÚºóÃæ¸úÉÏ[],ÊÇÒòÎª[]ÒÑ¾­ÖØÔØ¹ý¡£
+		cout<<boxseq[i]; //×¢ï¿½ï¿½Ë´ï¿½ï¿½ï¿½boxseqÖ»ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ó£¬¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½Ö®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½Úºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[],ï¿½ï¿½ï¿½ï¿½Îª[]ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½Ø¹ï¿½ï¿½ï¿½
 */ 
 	cout<<"\n\n";	
 	return 0; 
